@@ -1,6 +1,6 @@
 // inital check for systems which do not have light or dark mode
 var nightTabData = JSON.parse(localStorage.getItem("nightTab"));
-if (!document.querySelector("html").classList.contains("is-ready")) {
+if (!document.querySelector("html").classList.contains("is-ready") && !state.get.current()) {
   console.log("hit");
   if (window.matchMedia("(prefers-color-scheme:light)").matches) {
     if (nightTabData) {

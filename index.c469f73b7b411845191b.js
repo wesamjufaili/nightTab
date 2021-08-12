@@ -336,7 +336,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --bookmark-color: var(--the
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bookmark-empty {\n  background-color: hsla(var(--theme-primary-040), 0.2);\n  padding: 2em 3em;\n  border-radius: calc(var(--theme-radius) * 0.01em);\n  height: inherit;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 1em;\n}\n\n.bookmark-empty-string:not(:last-child) {\n  margin-bottom: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".bookmark-empty {\n  background-color: hsla(var(--theme-primary-040), 0.2);\n  border-radius: calc(var(--theme-radius) * 0.01em);\n  padding: 2em 1em;\n  height: inherit;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  gap: 1em;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.bookmark-empty-headline:not(:last-child) {\n  margin-bottom: 0;\n}\n\n.bookmark-empty-control {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 1em;\n  flex-wrap: wrap;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -746,7 +746,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --form-space: 8;\n}\n\n:roo
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --form-inline-gap: 4;\n  --form-inline-gap-small: calc(var(--form-inline-gap) * 1);\n  --form-inline-gap-medium: calc(var(--form-inline-gap) * 2);\n  --form-inline-gap-large: calc(var(--form-inline-gap) * 4);\n}\n\n.form-inline {\n  position: relative;\n  display: inline-flex;\n  justify-content: flex-start;\n  align-items: center;\n}\n\n.form-inline-horizontal {\n  flex-direction: row;\n}\n\n.form-inline-vertical {\n  flex-direction: column;\n}\n\n.form-inline-gap-small {\n  row-gap: calc((var(--form-inline-gap-small) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-small) / 4) * 1em);\n}\n\n.form-inline-gap-medium {\n  row-gap: calc((var(--form-inline-gap-medium) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-medium) / 4) * 1em);\n}\n\n.form-inline-gap-large {\n  row-gap: calc((var(--form-inline-gap-large) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-large) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-small {\n  gap: calc((var(--form-inline-gap-small) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-medium {\n  gap: calc((var(--form-inline-gap-medium) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-large {\n  gap: calc((var(--form-inline-gap-large) / 4) * 1em);\n}\n\n.form-inline-wrap {\n  flex-wrap: wrap;\n}\n\n.form-inline-block {\n  display: flex;\n}\n\n.form-inline .form-wrap:not(:first-child),\n.form-inline .form-wrap:not(:last-child) {\n  margin-top: 0;\n  margin-bottom: 0;\n}\n\n.form-inline .form-wrap {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 0;\n}\n\n.form-inline .form-wrap label {\n  white-space: nowrap;\n}\n\n.form-inline label:not(:only-child):not(:last-child) {\n  padding-bottom: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --form-inline-gap: 4;\n  --form-inline-gap-small: calc(var(--form-inline-gap) * 1);\n  --form-inline-gap-medium: calc(var(--form-inline-gap) * 2);\n  --form-inline-gap-large: calc(var(--form-inline-gap) * 4);\n}\n\n.form-inline {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n}\n\n.form-inline-justify-left {\n  justify-content: flex-start;\n}\n\n.form-inline-justify-center {\n  justify-content: center;\n}\n\n.form-inline-justify-right {\n  justify-content: flex-end;\n}\n\n.form-inline-horizontal {\n  flex-direction: row;\n}\n\n.form-inline-vertical {\n  flex-direction: column;\n}\n\n.form-inline-gap-small {\n  row-gap: calc((var(--form-inline-gap-small) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-small) / 4) * 1em);\n}\n\n.form-inline-gap-medium {\n  row-gap: calc((var(--form-inline-gap-medium) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-medium) / 4) * 1em);\n}\n\n.form-inline-gap-large {\n  row-gap: calc((var(--form-inline-gap-large) / 12) * 1em);\n  column-gap: calc((var(--form-inline-gap-large) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-small {\n  gap: calc((var(--form-inline-gap-small) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-medium {\n  gap: calc((var(--form-inline-gap-medium) / 4) * 1em);\n}\n\n.form-inline-gap-equal.form-inline-gap-large {\n  gap: calc((var(--form-inline-gap-large) / 4) * 1em);\n}\n\n.form-inline-wrap {\n  flex-wrap: wrap;\n}\n\n.form-inline-block {\n  display: flex;\n}\n\n.form-inline .form-wrap:not(:first-child),\n.form-inline .form-wrap:not(:last-child) {\n  margin-top: 0;\n  margin-bottom: 0;\n}\n\n.form-inline .form-wrap {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 0;\n}\n\n.form-inline .form-wrap label {\n  white-space: nowrap;\n}\n\n.form-inline label:not(:only-child):not(:last-child) {\n  padding-bottom: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1086,7 +1086,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".is-bookmark-style-block {\n  --group-
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".group-empty {\n  background-color: hsla(var(--theme-primary-040), 0.2);\n  padding: 0.5em 1em;\n  border-radius: calc(var(--theme-radius) * 0.01em);\n  height: inherit;\n  text-align: center;\n  display: flex;\n  grid-column-start: 1;\n  grid-column-end: -1;\n  gap: 1em;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.is-bookmark-style-block .group-empty {\n  flex-direction: column;\n}\n\n.is-bookmark-style-list .group-empty {\n  flex-direction: row;\n}\n\n.group-empty-headline:not(:last-child) {\n  margin-bottom: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".group-empty {\n  background-color: hsla(var(--theme-primary-040), 0.2);\n  border-radius: calc(var(--theme-radius) * 0.01em);\n  padding: 0.5em 1em;\n  height: inherit;\n  text-align: center;\n  grid-column-start: 1;\n  grid-column-end: -1;\n  display: flex;\n  gap: 1em;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.is-bookmark-style-block .group-empty {\n  flex-direction: column;\n}\n\n.is-bookmark-style-list .group-empty {\n  flex-direction: row;\n}\n\n.group-empty-headline:not(:last-child) {\n  margin-bottom: 0;\n}\n\n.group-empty-control {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 1em;\n  flex-wrap: wrap;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23830,15 +23830,15 @@ icon_icon.all = {
   },
   addBookmark: {
     name: 'add-bookmark',
-    path: 'M17,11v6.97l-5-2.14l-5,2.14V5h6V3H7C5.9,3,5,3.9,5,5v16l7-3l7,3V11H17z M21,7h-2v2h-2V7h-2V5h2V3h2v2h2V7z'
+    path: 'M17 11v6.97l-5-2.14l-5 2.14V5h6V3H7C5.9 3 5 3.9 5 5v16l7-3l7 3V11H17z M21 7h-2v2h-2V7h-2V5h2V3h2v2h2V7z'
   },
-  folder: {
-    name: 'folder',
-    path: 'M9.17 6l2 2H20v10H4V6h5.17M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z'
+  group: {
+    name: 'group',
+    path: 'M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z'
   },
-  addFolder: {
-    name: 'add-folder',
-    path: 'M20 6h-8l-2-2H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm0 12H4V6h5.17l2 2H20v10zm-8-4h2v2h2v-2h2v-2h-2v-2h-2v2h-2z'
+  addGroup: {
+    name: 'add-group',
+    path: 'M19 19H5V5H14V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V10H19V19Z M19 5V3H17V5H15V7H17V9H19V7H21V5H19Z'
   }
 };
 
@@ -24205,6 +24205,7 @@ const inline_inline = function({
   reverse = false,
   block = false,
   wrap = false,
+  justify = 'left',
   gap = 'medium',
   equalGap = false,
   children = false
@@ -24240,6 +24241,22 @@ const inline_inline = function({
 
   if (equalGap) {
     inline.classList.add('form-inline-gap-equal');
+  };
+
+  switch (justify) {
+
+    case 'left':
+      inline.classList.add('form-inline-justify-left');
+      break;
+
+    case 'center':
+      inline.classList.add('form-inline-justify-center');
+      break;
+
+    case 'right':
+      inline.classList.add('form-inline-justify-right');
+      break;
+
   };
 
   if (reverse) {
@@ -32912,6 +32929,8 @@ themeSetting.saved = (parent) => {
           children: [
             inline_inline({
               gap: 'small',
+              wrap: true,
+              equalGap: true,
               children: [
                 themeSetting.control.saved.saveButton.wrap(),
                 themeSetting.control.saved.edit.wrap()
@@ -32931,6 +32950,8 @@ themeSetting.saved = (parent) => {
           children: [
             inline_inline({
               gap: 'small',
+              wrap: true,
+              equalGap: true,
               children: [
                 themeSetting.control.saved.saveButton.wrap()
               ]
@@ -36717,6 +36738,9 @@ groupSetting.name = (parent) => {
     node('div', [
       groupSetting.control.name.size.wrap(),
       inline_inline({
+        gap: 'small',
+        wrap: true,
+        equalGap: true,
         children: [
           groupSetting.control.name.hide.wrap(),
           groupSetting.control.name.show.wrap()
@@ -36860,6 +36884,9 @@ groupSetting.open = (parent) => {
     node('div', [
       groupSetting.control.open.size.wrap(),
       inline_inline({
+        gap: 'small',
+        wrap: true,
+        equalGap: true,
         children: [
           groupSetting.control.open.hide.wrap(),
           groupSetting.control.open.show.wrap()
@@ -37226,6 +37253,8 @@ bookmarkSetting.sort = (parent) => {
         children: [
           inline_inline({
             gap: 'small',
+            wrap: true,
+            equalGap: true,
             children: [
               bookmarkSetting.control.sort.letter.wrap(),
               bookmarkSetting.control.sort.icon.wrap(),
@@ -40359,7 +40388,7 @@ const ToolbarControl = function() {
       srOnly: true,
       iconName: 'add',
       menuItem: [
-        { text: 'New Group', iconName: 'addFolder', action: () => { component_group_group.add.render(); } },
+        { text: 'New Group', iconName: 'addGroup', action: () => { component_group_group.add.render(); } },
         { text: 'New Bookmark', iconName: 'addBookmark', action: () => { bookmark_bookmark.add.render(); } }
       ]
     }),
@@ -54711,16 +54740,16 @@ const GroupEmpty = function({
   this.element = {
     empty: node('div|class:group-empty'),
     control: node('div|class:group-empty-control'),
-    headline: node('p:Empty Group|class:group-empty-headline small muted')
+    headline: node('p:No Bookmarks in this Group|class:group-empty-headline small muted')
   };
 
   this.control = {};
 
   this.control.button = {
-    remove: new Button({
-      text: 'Add a Bookmark',
-      size: 'small',
+    bookmark: new Button({
+      text: 'Add a new Bookmark',
       iconName: 'addBookmark',
+      size: 'small',
       func: () => {
         bookmark_bookmark.add.render({
           groupIndex: groupIndex
@@ -54731,9 +54760,9 @@ const GroupEmpty = function({
 
   this.assemble = () => {
 
-    this.element.control.appendChild(this.control.button.remove.button);
-
     this.element.empty.appendChild(this.element.headline);
+
+    this.element.control.appendChild(this.control.button.bookmark.button);
 
     this.element.empty.appendChild(this.element.control);
 
@@ -54854,30 +54883,45 @@ var bookmarkEmpty_update = injectStylesIntoStyleTag_default()(bookmarkEmpty/* de
 
 
 
+
 const BookmarkEmpty = function() {
 
   this.element = {
     empty: node('div|class:bookmark-empty'),
-    description: node('p:No Groups or Bookmarks|class:bookmark-empty-headline small muted')
+    control: node('div|class:bookmark-empty-control'),
+    headline: node('p:No Groups or Bookmarks|class:bookmark-empty-headline small muted')
   };
 
   this.control = {};
 
   this.control.button = {
-    add: new Button({
-      text: 'Add a Bookmark',
+    bookmark: new Button({
+      text: 'Add a new Bookmark',
+      iconName: 'addBookmark',
       size: 'small',
       func: () => {
         bookmark_bookmark.add.render();
+      }
+    }),
+    group: new Button({
+      text: 'Add a new Group',
+      iconName: 'addGroup',
+      size: 'small',
+      func: () => {
+        component_group_group.add.render();
       }
     })
   };
 
   this.assemble = () => {
 
-    this.element.empty.appendChild(this.element.description);
+    this.element.empty.appendChild(this.element.headline);
 
-    this.element.empty.appendChild(this.control.button.add.button);
+    this.element.control.appendChild(this.control.button.group.button);
+
+    this.element.control.appendChild(this.control.button.bookmark.button);
+
+    this.element.empty.appendChild(this.element.control);
 
   };
 

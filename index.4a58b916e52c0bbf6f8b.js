@@ -256,7 +256,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margi
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --utility-muted: var(--theme-primary-140);\n  --utility-muted-hover: var(--theme-primary-140);\n  --utility-muted-focus-active: var(--theme-primary-140);\n  --utility-muted-checked: var(--theme-primary-140);\n  --utility-muted-disabled: var(--theme-primary-030);\n}\n\n.list-unstyled {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\n.list-unstyled li {\n  list-style-type: none;\n}\n\n.list-unstyled li:not(:last-child) {\n  margin-bottom: 0;\n}\n\n.list-inline li {\n  display: inline-block;\n}\n\n.small {\n  font-size: 0.8em;\n}\n\n.muted {\n  color: hsl(var(--utility-muted));\n}\n\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n\n.color-demo {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  align-items: center;\n}\n\n.baseline-alignment-icon-character {\n  width: 0;\n  opacity: 0;\n  pointer-events: none;\n  visibility: hidden;\n  padding: 0;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --utility-muted: var(--theme-primary-110);\n  --utility-muted-hover: var(--theme-primary-110);\n  --utility-muted-focus-active: var(--theme-primary-110);\n  --utility-muted-checked: var(--theme-primary-110);\n  --utility-muted-disabled: var(--theme-primary-030);\n}\n\n.list-unstyled {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\n.list-unstyled li {\n  list-style-type: none;\n}\n\n.list-unstyled li:not(:last-child) {\n  margin-bottom: 0;\n}\n\n.list-inline li {\n  display: inline-block;\n}\n\n.small {\n  font-size: 0.8em;\n}\n\n.muted {\n  color: hsl(var(--utility-muted));\n}\n\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n\n.color-demo {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  align-items: center;\n}\n\n.baseline-alignment-icon-character {\n  width: 0;\n  opacity: 0;\n  pointer-events: none;\n  visibility: hidden;\n  padding: 0;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -26037,13 +26037,29 @@ state.get = {
 };
 
 state.set = {
-  restore: (dataToRestore) => {
-    state.current = dataToRestore.state;
-    console.log('state restored');
+  restore: {
+    setup: (dataToRestore) => {
+
+      state.current.layout = dataToRestore.state.layout;
+      state.current.header = dataToRestore.state.header;
+      state.current.bookmark = dataToRestore.state.bookmark;
+      state.current.group = dataToRestore.state.group;
+      state.current.toolbar = dataToRestore.state.toolbar;
+      console.log('setup restored');
+
+    },
+    theme: (dataToRestore) => {
+
+      state.current.theme = dataToRestore.state.theme;
+      console.log('theme restored');
+
+    }
   },
   default: () => {
+
     state.current = state.get.default();
     console.log('state set to default');
+
   }
 };
 
@@ -39440,7 +39456,7 @@ dataSetting.import = (parent) => {
     labelText: 'Import data',
     inputButtonStyle: ['line'],
     action: () => {
-      data.import(dataSetting.control.import.importElement.input, importFeedback)
+      data.import.file(dataSetting.control.import.importElement.input, importFeedback)
     }
   });
 
@@ -41994,8 +42010,6 @@ const Search = function() {
     };
 
   };
-
-  this.state();
 
   this.assemble();
 
@@ -59886,6 +59900,102 @@ update_update.run = (data) => {
 
 
 
+;// CONCATENATED MODULE: ./src/component/importForm/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const ImportForm = function({
+  dataToImport = false,
+  state = false
+} = {}) {
+
+  this.element = {
+    form: node('form|class:import-form'),
+    description: node('p:Import all or part of the backup:|class:mb-5')
+  };
+
+  this.count = {
+    bookmark: () => {
+
+      let count = 0;
+
+      dataToImport.bookmark.forEach((item, i) => { count = count + item.items.length });
+
+      return count;
+
+    },
+  };
+
+  this.control = {
+    import: {
+      setup: new Control_checkbox({
+        object: state,
+        path: 'setup',
+        id: 'setup',
+        labelText: 'Settings',
+        description: 'This includes Layout size and position, Header setup and other user settings.'
+      }),
+      bookmark: new Control_checkbox({
+        object: state,
+        path: 'bookmark',
+        id: 'bookmark',
+        labelText: 'Bookmarks',
+        description: [`This includes ${this.count.bookmark()} ${this.count.bookmark() > 1 ? `Bookmarks` : `Bookmark`} in ${dataToImport.bookmark.length} ${dataToImport.bookmark.length > 1 ? `Groups` : `Group`}.`, 'Bookmarks will keep any custom Colours, Accents and Borders when imported.']
+      }),
+      theme: new Control_checkbox({
+        object: state,
+        path: 'theme',
+        id: 'theme',
+        labelText: 'Theme',
+        description: 'This includes the Colour, Accent, Fonts, Background and any saved Custom Themes.'
+      })
+    }
+  };
+
+  this.disable = () => {};
+
+  this.assemble = () => {
+
+    this.element.form.append(node('div', [
+      this.element.description,
+      this.control.import.setup.wrap(),
+      this.control.import.bookmark.wrap(),
+      this.control.import.theme.wrap()
+    ]));
+
+  };
+
+  this.form = () => {
+
+    return this.element.form;
+
+  };
+
+  this.assemble();
+
+};
+
 ;// CONCATENATED MODULE: ./src/utility/dateTime.js
 const dateTime = () => {
 
@@ -59936,6 +60046,8 @@ const isJson = (string) => {
 
 
 
+
+
 const data = {};
 
 data.set = (key, data) => {
@@ -59946,15 +60058,27 @@ data.get = (key) => {
   return localStorage.getItem(key);
 };
 
-data.import = (input, feedback) => {
-  const fileList = input.files;
+data.import = {
+  state: { setup: true, bookmark: true, theme: true },
+  reset: () => {
 
-  if (fileList.length > 0) {
-    data.validateJsonFile(fileList, input, feedback);
-  };
+    for (let key in data.import.state) {
+      data.import.state[key] = true;
+    };
+
+  },
+  file: (input, feedback) => {
+
+    const fileList = input.files;
+
+    if (fileList.length > 0) {
+      data.validateFile(fileList, input, feedback);
+    };
+
+  }
 };
 
-data.validateJsonFile = (fileList, input, feedback) => {
+data.validateFile = (fileList, input, feedback) => {
 
   // make new file reader
   var reader = new FileReader();
@@ -59968,13 +60092,64 @@ data.validateJsonFile = (fileList, input, feedback) => {
       // is this JSON from this app
       if (JSON.parse(event.target.result)[appName] || JSON.parse(event.target.result)[appName.toLowerCase()]) {
 
+        const validFileSuccessAction = () => {
+
+          menu.close();
+
+          let dataToImport = JSON.parse(event.target.result);
+
+          if (dataToImport.version != version.number) {
+
+            dataToImport = data.update(JSON.parse(event.target.result));
+
+          };
+
+          const importForm = new ImportForm({
+            dataToImport: dataToImport,
+            state: data.import.state
+          });
+
+          const importModal = new Modal({
+            heading: 'Data to import',
+            content: importForm.form(),
+            successText: 'Import',
+            width: 'small',
+            successAction: () => {
+
+              if (data.import.state.setup || data.import.state.theme || data.import.state.bookmark) {
+
+                let dataToRestore = JSON.parse(event.target.result);
+
+                if (dataToRestore.version != version.number) {
+
+                  data.backup(dataToRestore);
+
+                  dataToRestore = data.update(dataToRestore);
+
+                };
+
+                data.restore(dataToRestore);
+
+                data.save();
+
+                data.reload.render();
+
+              };
+
+              data.import.reset();
+
+            },
+            cancelAction: () => { data.import.reset(); },
+            closeAction: () => { data.import.reset(); }
+          });
+
+          importModal.open();
+
+        };
+
         data.feedback.clear.render(feedback);
 
-        data.feedback.success.render(feedback, fileList[0].name, () => {
-          data.restore(JSON.parse(event.target.result));
-          data.save();
-          data.reload.render();
-        });
+        data.feedback.success.render(feedback, fileList[0].name, validFileSuccessAction);
 
         input.value = '';
 
@@ -60041,31 +60216,59 @@ data.remove = (key) => {
 };
 
 data.backup = (dataToBackup) => {
+
   if (dataToBackup) {
-    console.log('data version ' + dataToBackup.version + ' backed up');
+
     data.set(appName + 'Backup', JSON.stringify(dataToBackup));
+
+    console.log('data version ' + dataToBackup.version + ' backed up');
+
   };
+
+};
+
+data.update = (dataToUpdate) => {
+
+  if (dataToUpdate.version != version.number) {
+
+    dataToUpdate = update_update.run(dataToUpdate);
+
+  } else {
+
+    console.log('data version:', version.number, 'no need to run update');
+
+  };
+
+  return dataToUpdate;
+
 };
 
 data.restore = (dataToRestore) => {
+
   if (dataToRestore) {
-    if (dataToRestore.version != version.number) {
-      // backup save data before running update
-      data.backup(dataToRestore);
-      // run update on save data
-      dataToRestore = update_update.run(dataToRestore);
-      // save data
-      data.set(appName, JSON.stringify(dataToRestore));
-    } else {
-      console.log('data version:', version.number, 'no need to run update');
+
+    console.log('data found to load');
+
+    if (data.import.state.setup) {
+      state.set.restore.setup(dataToRestore);
     };
-    // restore state and bookmarks from save data
-    state.set.restore(dataToRestore);
-    bookmark_bookmark.restore(dataToRestore);
+
+    if (data.import.state.theme) {
+      state.set.restore.theme(dataToRestore);
+    };
+
+    if (data.import.state.bookmark) {
+      bookmark_bookmark.restore(dataToRestore);
+    };
+
   } else {
+
     console.log('no data found to load');
+
     state.set.default();
+
   };
+
 };
 
 data.save = () => {
@@ -60078,11 +60281,27 @@ data.save = () => {
 };
 
 data.load = () => {
+
   if (data.get(appName) != null && data.get(appName) != undefined) {
-    return JSON.parse(data.get(appName));
+
+    let dataToLoad = JSON.parse(data.get(appName));
+
+    if (dataToLoad.version != version.number) {
+
+      data.backup(dataToLoad);
+
+      dataToLoad = data.update(dataToLoad);
+
+    };
+
+    return dataToLoad;
+
   } else {
+
     return false;
+
   };
+
 };
 
 data.wipe = () => {
@@ -60140,11 +60359,15 @@ data.feedback.clear = {
 
 data.feedback.success = {
   render: (feedback, filename, action) => {
+
     feedback.appendChild(node('p:Success! Restoring ' + appName + ' Bookmarks and Settings.|class:muted small'));
+
     feedback.appendChild(node('p:' + filename));
+
     if (action) {
       data.feedback.animation.set.render(feedback, 'is-pop', action);
     };
+
   }
 };
 

@@ -37129,8 +37129,25 @@ bookmarkSetting.general = (parent) => {
     path: 'bookmark.newTab',
     labelText: 'Open Bookmarks in a new tab',
     action: () => {
+
       groupAndBookmark.render();
+
+      if (bookmarkSetting.edge.general.size) {
+
+        if (state.get.current().bookmark.show && bookmark_bookmark.tile.current.length > 0) {
+
+          bookmarkSetting.edge.general.size.update.primary(bookmark_bookmark.tile.current[0].tile());
+
+        };
+
+      } else {
+
+        bookmarkSetting.edge.general.size = new Edge({ primary: bookmark_bookmark.tile.current[0].tile(), secondary: [bookmark_bookmark.element.area] });
+
+      };
+
       data.save();
+
     }
   });
 
@@ -56724,7 +56741,6 @@ const BookmarkForm = function({
     };
 
     if (bookmarkData.link.display.visual.show || bookmarkData.link.display.name.show) {
-      console.log(this.control.bookmark.display.translate.label);
       this.control.bookmark.display.translate.label.classList.remove('disabled');
       this.control.bookmark.display.translate.x.enable();
       this.control.bookmark.display.translate.y.enable();
